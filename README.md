@@ -1,2 +1,2 @@
-# LAMP-stack
+# LAMP Stack
 Practice Repository for LAMP stack.
