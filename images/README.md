@@ -33,5 +33,6 @@ This set of frameworks and tools are very specifically chosen to work together i
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; `
 - #Exit the MySQL shell with
 `exit` after the mysql> prompt
-- 
+- #Start the interactive script by running:
+`sudo mysql_secure_installation`
 
