@@ -1,4 +1,6 @@
-# Background
+# LAMP Stack Installation
+
+## Background
 A technology stack is a set of frameworks and tools used to develop a software product. 
 This set of frameworks and tools are very specifically chosen to work together in creating a well-functioning software. They are acronyms for individual technologies used together for a specific technology product. some examples are…
 LAMP (Linux, Apache, MySQL, PHP or Python, or Perl)
@@ -16,4 +18,8 @@ MEAN (MongoDB, ExpressJS, AngularJS, NodeJS
  
 - #Run apache2 package installation
 `sudo apt install apache2`
+
+- #Check Apache status
+`sudo systemctl status apache2`
+
 
