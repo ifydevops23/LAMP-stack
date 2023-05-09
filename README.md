@@ -21,12 +21,14 @@ This set of frameworks and tools are very specifically chosen to work together i
 `sudo apt install apache2`
 - Check Apache status
 `sudo systemctl status apache2`
+
 ![Apache_running](https://github.com/ifydevops23/LAMP-stack/assets/126971054/3af10f6a-7831-487c-bcdc-c5bd8f05b394)
 
 - Verify that apache2 is running as a Service in our OS
 `sudo systemctl status apache2`
 - Access url from a web browser 
 `http://<Public-IP-Address>:80` or `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
+
 ![Apache_interface_via_web](https://github.com/ifydevops23/LAMP-stack/assets/126971054/f0feeca1-0770-41db-9c1f-6a77d7b8a732)
 
 ## STEP 2 — INSTALLING MYSQL (Database Management System)
@@ -38,6 +40,7 @@ This set of frameworks and tools are very specifically chosen to work together i
 `sudo mysql`
 - Set a password for the root user
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; `
+
 ![Password_change](https://github.com/ifydevops23/LAMP-stack/assets/126971054/7721bbaa-64fc-4e1c-8aa2-a5894e0f78a1)
 - Exit the MySQL shell with
 `exit` after the mysql> prompt
@@ -51,6 +54,7 @@ This set of frameworks and tools are very specifically chosen to work together i
 ## STEP 3 — INSTALLING PHP (Required Libraries and Modules for Dynamic Content)
 - To install PHP package, php-mysql, libapache2-mod-php
 `sudo apt install php libapache2-mod-php php-mysql`
+
 ![installing-php](https://github.com/ifydevops23/LAMP-stack/assets/126971054/7f1fb09a-ee78-4e84-839b-a1b7ddbe671e)
 - To confirm php version
 `php -v`
