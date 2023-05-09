@@ -37,6 +37,7 @@ This set of frameworks and tools are very specifically chosen to work together i
 `sudo mysql`
 - Set a password for the root user
 `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; `
+![Password_change](https://github.com/ifydevops23/LAMP-stack/assets/126971054/7721bbaa-64fc-4e1c-8aa2-a5894e0f78a1)
 - Exit the MySQL shell with
 `exit` after the mysql> prompt
 - Start the interactive script by running
