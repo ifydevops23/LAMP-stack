@@ -27,10 +27,12 @@ This set of frameworks and tools are very specifically chosen to work together i
 `sudo systemctl status apache2`
 - Access url from a web browser 
 `http://<Public-IP-Address>:80` or `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
+![Apache_interface_via_web](https://github.com/ifydevops23/LAMP-stack/assets/126971054/f0feeca1-0770-41db-9c1f-6a77d7b8a732)
 
 ## STEP 2 — INSTALLING MYSQL (Database Management System)
 - To acquire and install this software
 `sudo apt install mysql-server`
+![Installin_mysql_server](https://github.com/ifydevops23/LAMP-stack/assets/126971054/ee927f23-e01c-4453-b4a7-d96a470a98d2)
 - Log in to the MySQL console
 `sudo mysql`
 - Set a password for the root user
@@ -47,6 +49,7 @@ This set of frameworks and tools are very specifically chosen to work together i
 ## STEP 3 — INSTALLING PHP (Required Libraries and Modules for Dynamic Content)
 - To install PHP package, php-mysql, libapache2-mod-php
 `sudo apt install php libapache2-mod-php php-mysql`
+![installing-php](https://github.com/ifydevops23/LAMP-stack/assets/126971054/7f1fb09a-ee78-4e84-839b-a1b7ddbe671e)
 - To confirm php version
 `php -v`
 
@@ -86,6 +89,7 @@ sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/met
 ```
 - Open your website URL using IP address
 `http://<Public-IP-Address>:80`
+![hello_from_new_website](https://github.com/ifydevops23/LAMP-stack/assets/126971054/d5fadd55-8214-4a6c-b8cd-246499362763)
 
 ## STEP 5 — ENABLE PHP ON THE WEBSITE
 ### Setting up index.php as landing page to take precedence over index.html
