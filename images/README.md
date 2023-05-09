@@ -12,6 +12,8 @@ This set of frameworks and tools are very specifically chosen to work together i
 - Launch a virtual server with Ubuntu Server OS.
 - Connect to the remote host via SSH.
 
+![Virtual Machine- Running](https://github.com/ifydevops23/LAMP-stack/assets/126971054/81a52e3e-ac7d-42cf-a7c2-5d9fd13ab282)
+
 ## STEP 1 : INSTALLING APACHE AND UPDATING THE FIREWALL (Web Server)
 - Update a list of packages in package manager
 `sudo apt update` 
@@ -19,6 +21,8 @@ This set of frameworks and tools are very specifically chosen to work together i
 `sudo apt install apache2`
 - Check Apache status
 `sudo systemctl status apache2`
+![Apache_running](https://github.com/ifydevops23/LAMP-stack/assets/126971054/3af10f6a-7831-487c-bcdc-c5bd8f05b394)
+
 - Verify that apache2 is running as a Service in our OS
 `sudo systemctl status apache2`
 - Access url from a web browser 
@@ -106,5 +110,8 @@ sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/met
 phpinfo();
 ```
 - Refresh the page at `http://<Public-IP-Address>:80`
+
+![php_enabled](https://github.com/ifydevops23/LAMP-stack/assets/126971054/7a67034a-75ce-4947-ac83-0665dae51e91)
+
 - Remove index.php file created (contains sensitive information about the PHP environment and server)
 `sudo rm /var/www/<domain_name>/index.php`
