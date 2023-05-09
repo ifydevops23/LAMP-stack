@@ -32,6 +32,7 @@ This set of frameworks and tools are very specifically chosen to work together i
 ## STEP 2 — INSTALLING MYSQL (Database Management System)
 - To acquire and install this software
 `sudo apt install mysql-server`
+
 ![Installin_mysql_server](https://github.com/ifydevops23/LAMP-stack/assets/126971054/ee927f23-e01c-4453-b4a7-d96a470a98d2)
 - Log in to the MySQL console
 `sudo mysql`
