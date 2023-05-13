@@ -108,8 +108,78 @@ server {
 Test it to validate that Nginx can correctly hand .php files off to your PHP processor.
 Create a test PHP file in your document root.
 - Open a new file called info.php within your document root in your text editor `sudo nano /var/www/projectLEMP/info.php`
+- Type or paste the following lines into the new file.
+```
+<?php
+phpinfo();
+```
+-  Access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php `http://`server_domain_or_IP`/info.php`
 
-- 
+![5_php_from_browser](https://github.com/ifydevops23/Software_Stack/assets/126971054/52397c26-d6b0-4aad-8254-8789c029c5d2)
+
+- Remove the info.php file `sudo rm /var/www/your_domain/info.php`
+
+## STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
+In this step I created a test database (DB) with simple "To do list" and configure access to it, so the Nginx website would be able to query data from the DB and display it.
+
+- Connect to the MySQL console using the root account `sudo mysql -p`
+- Create a new database `mysql> CREATE DATABASE `example_database`;`
+- Create a new user named example_user `mysql> CREATE USER `'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';`
+
+![My_sql_prompt](https://github.com/ifydevops23/Software_Stack/assets/126971054/17290cdc-3cb2-4095-abf3-83ca448a33cd)
+
+- Give this user permission over the example_database database `mysql> GRANT ALL ON example_database.* TO 'example_user'@'%';`
+- Now exit the MySQL shell with `mysql> exit`
+- Test if the new user has the proper permissions by logging in to the MySQL console `mysql -u example_user -p`
+- Confirm that you have access to the example_database database `mysql> SHOW DATABASES;`
+
+![6_Show_database_(default_DB)](https://github.com/ifydevops23/Software_Stack/assets/126971054/933c1b82-a88c-48c5-a456-7ec3d3b01dab)
+
+- Create a test table named todo_list
+```
+CREATE TABLE example_database.todo_list (
+mysql> 	item_id INT AUTO_INCREMENT,
+mysql> 	content VARCHAR(255),
+mysql> 	PRIMARY KEY(item_id)
+mysql> );
+
+```
+
+- Insert a few rows of content in the test table `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
+
+![6_mysql_table_creation_plus_content](https://github.com/ifydevops23/Software_Stack/assets/126971054/6b578416-555b-4a79-8ae3-6dc079493b0d)
+
+- To confirm that the data was successfully saved to your table, run: `mysql> SELECT * FROM example_database.todo_list;`
+
+![6_DB_table_from_terminal](https://github.com/ifydevops23/Software_Stack/assets/126971054/fa7b2f82-74d2-491b-977f-4711ce2bea20)
+
+- After confirming that you have valid data in your test table, you can exit the MySQL console `mysql> exit`
+- Create a PHP script that will connect to MySQL and query for your content `nano /var/www/projectLEMP/todo_list.php` and copy this content into your todo_list.php script:
+
+```
+<?php
+$user = "example_user";
+$password = "password";
+$database = "example_database";
+$table = "todo_list";
+ 
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+	echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+	print "Error!: " . $e->getMessage() . "<br/>";
+	die();
+}
+
+```
+- Save and close the file when you are done editing.
+- You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by /todo_list.php [http://<Public_domain_or_IP>/todo_list.php]
+
+![Hello_from_db_table](https://github.com/ifydevops23/Software_Stack/assets/126971054/ec3ce2af-8b16-4836-996c-f674f1aa61f9)
 
 
 
