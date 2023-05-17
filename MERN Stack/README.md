@@ -62,6 +62,8 @@ Remember that Express is a framework for Node.js, therefore a lot of things deve
 To use express, install it using npm:
 `npm install express`
 
+![1_npm_install_express](https://github.com/ifydevops23/Software_Stack/assets/126971054/8f8d1976-9622-4868-aece-3ae03458e622)
+
 Now create a file index.js with the command below
 `touch index.js`
 Run `ls` to confirm that your index.js file is successfully created
@@ -347,12 +349,14 @@ In Todo folder open the package.json file and update the scripts section:
  
 ```
 "scripts": {
-"start": "node index.js",
-"start-watch": "nodemon index.js",
-"dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
+  "start": "node index.js",
+  "start-watch": "nodemon index.js",
+  "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
 },
 ```
- 
+
+![1_adjust_script_for_reactDependencies](https://github.com/ifydevops23/Software_Stack/assets/126971054/3a4bad22-76d9-4a86-9229-4b7c686e4220)
+
 Configure Proxy in package.json
 Change directory to ‘client’
 `cd client`
@@ -684,6 +688,10 @@ Go to the Todo directory
 cd ../..
 In the Todo directory run:
 `npm run dev`
+ 
+![2_devServer_succesful](https://github.com/ifydevops23/Software_Stack/assets/126971054/8b17bc7b-c5f6-429f-a02b-b46b32f90ad6)
+
+ 
 Our To-Do app is ready and fully functional with the functionality of: creating a task, deleting a task and viewing all tasks.
 
 ![2_snip_after_delete_of_tasks](https://github.com/ifydevops23/Software_Stack/assets/126971054/7261e005-04af-4663-99cd-bf5940e85602)
