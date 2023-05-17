@@ -1,7 +1,7 @@
 # MERN STACK DEPLOYMENT 
 
 ## SIMPLE TO-DO APPLICATION ON MERN WEB STACK
-In this project, i implemented a web solution based on MERN stack in AWS Cloud.
+In this project, I implemented a web solution based on MERN stack in AWS Cloud.
 MERN Web stack consists of following components:
 MongoDB: A document-based, No-SQL database used to store application data in a form of documents.
 ExpressJS: A server-side Web Application framework for Node.js.
