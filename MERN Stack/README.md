@@ -337,10 +337,12 @@ We are done with the functionality we want from our backend and API, it is time 
  In the same root directory as your backend code, which is the Todo directory, run:
  `npx create-react-app client`
  
-![2_success_creating_react_app](https://github.com/ifydevops23/Software_Stack/assets/126971054/87b74087-9f4c-4a79-9e43-b82be2e9b97b
-
 This will create a new folder in your Todo directory called client, where you will add all the react code.
 
+ 
+![2_success_creating_react_app](https://github.com/ifydevops23/Software_Stack/assets/126971054/c2c21349-566c-4269-bb97-6831e41597b7)
+
+ 
 **Running a React App**
 Before testing the react app, there are some dependencies that need to be installed.
 Install concurrently. It is used to run more than one command simultaneously from the same terminal window.
