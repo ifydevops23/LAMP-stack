@@ -110,10 +110,11 @@ Open up your browser and try to access your server’s Public IP or Public DNS n
 ![Welcome_to_express](https://github.com/ifydevops23/Software_Stack/assets/126971054/356a8bd9-d182-4712-af2a-95a2da92c0b9)
 
 **Routes**
-There are three actions that our To-Do application does:
-Create a new task
-Display list of all tasks
-Delete a completed task
+
+- There are three actions that our To-Do application does:
+1. Create a new task
+2. Display list of all tasks
+3. Delete a completed task
 Each task will be associated with some particular endpoint and will use different standard HTTP request methods: POST, GET, DELETE.
 For each task, we need to create routes that will define various endpoints that the To-do app will depend on. So let us create a folder routes.
 `mkdir routes`
@@ -328,7 +329,7 @@ Create a GET request to your API on http://<PublicIP-or-PublicDNS>:5000/api/todo
 
 ![1_postman_get](https://github.com/ifydevops23/Software_Stack/assets/126971054/551ddde6-9180-4731-8906-5db9f20ac262)
  
-## STEP 2 – FRONTEND CREATIO
+## STEP 2 – FRONTEND CREATION
 We are done with the functionality we want from our backend and API, it is time to create a user interface for a Web client (browser) to interact with the application via API. To start out with the frontend of the To-do app, we will use the create-react-app command to scaffold our app.
 
  In the same root directory as your backend code, which is the Todo directory, run:
@@ -357,7 +358,7 @@ Change directory to ‘client’
 `cd client`
 Open the package.json file
 `vi package.json`
-Add the key value pair in the package.json file "proxy": "http://localhost:5000".
+Add the key value pair in the package.json file "proxy": "http://localhost:5000"
 The whole purpose of adding the proxy configuration above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
  
 Now, ensure you are inside the Todo directory, and simply do:
