@@ -382,8 +382,13 @@ Your app should open and start running on localhost:3000
 **Creating your React Components**
 One of the advantages of react is that it makes use of components, which are reusable and also makes code modular. For our Todo app, there will be two stateful components and one stateless component.
 
- From your Todo directory run
+From your Todo directory run
 `cd client`
+
+Us `ls` to list files in client directory
+
+![1_files_in_client](https://github.com/ifydevops23/Software_Stack/assets/126971054/11b1a894-a44c-4834-97a9-e7a067b04363)
+
 Move to the src directory
 `cd src`
 Inside the src folder create another folder called components
@@ -394,7 +399,7 @@ Inside ‘components’ directory create three files Input.js, ListTodo.js and T
 touch Input.js ListTodo.js Todo.js
  
 ![1_create_files_in_components](https://github.com/ifydevops23/Software_Stack/assets/126971054/9f9551cd-f72a-4f32-835f-8333a229593f)
-
+ 
 Open Input.js file
 `vi Input.js`
 Copy and paste the following
