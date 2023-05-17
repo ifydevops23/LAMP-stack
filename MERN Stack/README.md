@@ -109,7 +109,7 @@ We start our server to see if it works. Open your terminal in the **Todo** direc
 Open up your browser and try to access your server’s Public IP or Public DNS name followed by port 5000:
 `http://<PublicIP-or-PublicDNS>:5000`
 
-![1_hello_express_from_web](https://github.com/ifydevops23/Software_Stack/assets/126971054/46b130e8-0631-441d-bb73-b98ee445be75)
+![1_hello_express_from_web12](https://github.com/ifydevops23/Software_Stack/assets/126971054/261067ff-97bb-4702-a270-55379b153df0)
 
 **Routes**
 
