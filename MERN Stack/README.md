@@ -147,6 +147,8 @@ router.delete('/todos/:id', (req, res, next) => {
 module.exports = router;
 ```
 
+![1_routes_for_endpoints](https://github.com/ifydevops23/Software_Stack/assets/126971054/cb73bfc0-063b-411f-9a97-ce107c001d8f)
+
 Next, Create Models directory.
 
 ### Models
@@ -325,8 +327,6 @@ Note: make sure your set header key Content-Type as application/json
 ![1_postman_post](https://github.com/ifydevops23/Software_Stack/assets/126971054/5fe173ad-f0f3-42c0-a8ff-a8a7e665a75f)
  
 
-Check the image below:
-
 Create a GET request to your API on http://<PublicIP-or-PublicDNS>:5000/api/todos. This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
 
 ![1_postman_get](https://github.com/ifydevops23/Software_Stack/assets/126971054/551ddde6-9180-4731-8906-5db9f20ac262)
@@ -337,6 +337,8 @@ We are done with the functionality we want from our backend and API, it is time 
  In the same root directory as your backend code, which is the Todo directory, run:
  `npx create-react-app client`
  
+![2_success_creating_react_app](https://github.com/ifydevops23/Software_Stack/assets/126971054/87b74087-9f4c-4a79-9e43-b82be2e9b97b
+
 This will create a new folder in your Todo directory called client, where you will add all the react code.
 
 **Running a React App**
@@ -367,6 +369,9 @@ The whole purpose of adding the proxy configuration above is to make it possible
  
 Now, ensure you are inside the Todo directory, and simply do:
 `npm run dev`
+ 
+ 
+ 
 Your app should open and start running on localhost:3000
 ![1_react_app_from_web](https://github.com/ifydevops23/Software_Stack/assets/126971054/3c5f941b-f7b1-416e-aaab-229f1018c2e4)
 
@@ -447,6 +452,8 @@ Move to clients folder
 `cd ..`
 Install Axios
 `npm install axios`
+
+![2_install axios](https://github.com/ifydevops23/Software_Stack/assets/126971054/f0a9beb6-02c6-4338-9167-3371e039ffaa)
 
 Go to ‘components’ directory
 `cd src/components`
