@@ -1,4 +1,4 @@
-#MERN STACK DEPLOYMENT 
+# MERN STACK DEPLOYMENT 
 
 ## SIMPLE TO-DO APPLICATION ON MERN WEB STACK
 In this project, i implemented a web solution based on MERN stack in AWS Cloud.
@@ -58,16 +58,22 @@ Next, we Install ExpressJs and create the Routes directory.
 
 Install ExpressJS
 Remember that Express is a framework for Node.js, therefore a lot of things developers would have programmed is already taken care of out of the box. Therefore, it simplifies development, and abstracts a lot of low-level details. For example, Express helps to define routes of your application based on HTTP methods and URLs.
+
 To use express, install it using npm:
 `npm install express`
+
 Now create a file index.js with the command below
 `touch index.js`
 Run `ls` to confirm that your index.js file is successfully created
 Install the dotenv module
 `npm install dotenv`
+
+![1_dotenv_install](https://github.com/ifydevops23/Software_Stack/assets/126971054/ac867a8a-d0fe-4c42-b11f-8720d6ace2d6)
+
 Open the index.js file with the command below
 `vim index.js`
 Type the code below into it and save. 
+
 ```
 const express = require('express');
 require('dotenv').config();
@@ -149,6 +155,9 @@ In essence, the Schema is a blueprint of how the database will be constructed, i
 To create a Schema and a model, install mongoose which is a Node.js package that makes working with mongodb easier.
 Change directory back Todo folder with cd .. and install Mongoose
 `npm install mongoose`
+
+![1_insatll_mongoose](https://github.com/ifydevops23/Software_Stack/assets/126971054/d7d30693-7a51-4efd-9b81-1007845ce6f2)
+
 Create a new folder models:
 `mkdir models`
 Change directory into the newly created ‘models’ folder with
@@ -294,7 +303,7 @@ console.log(`Server running on port ${port}`)
 });
 ```
 
- Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
+Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the index.js application file.
  
 Start your server using the command:
 `node index.js`
