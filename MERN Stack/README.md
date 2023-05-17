@@ -373,11 +373,13 @@ Now, ensure you are inside the Todo directory, and simply do:
 `npm run dev`
  
  
- 
 Your app should open and start running on localhost:3000
 ![1_react_app_from_web](https://github.com/ifydevops23/Software_Stack/assets/126971054/3c5f941b-f7b1-416e-aaab-229f1018c2e4)
 
 **Important note: In order to be able to access the application from the Internet you have to open TCP port 3000 on EC2 by adding a new Security Group rule.**
+ 
+![1_inbound_rules](https://github.com/ifydevops23/Software_Stack/assets/126971054/8172fe8b-af56-4569-9dea-d52785fd83b8)
+
  
 **Creating your React Components**
 One of the advantages of react is that it makes use of components, which are reusable and also makes code modular. For our Todo app, there will be two stateful components and one stateless component.
