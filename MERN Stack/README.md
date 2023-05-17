@@ -257,7 +257,7 @@ Ensure to update <username>, <password>, <network-address> and <database> accord
  
 Here is how to get your connection string
  
-![1_connect_to_db](https://github.com/ifydevops23/Software_Stack/assets/126971054/578fb3c7-9c63-4d3d-a2a9-675a7dc4ae72)
+![1_connect_to_db](https://github.com/ifydevops23/Software_Stack/assets/126971054/f71dfca3-cc10-40bf-827c-f5827d15458b)
 
 Update the index.js to reflect the use of .env so that Node.js can connect to the database.
 
@@ -659,8 +659,9 @@ margin-top: 0;
 
 In the src directory open the index.css
 `vim index.css`
+ 
 Copy and paste the code below:
-``
+```
 body {
 margin: 0;
 padding: 0;
