@@ -37,7 +37,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 - Install NodeJS <br>
 `sudo apt install -y nodejs`
 
-To be able to compile native addons from npm you’ll need to install the development tools: <br>
+- To be able to compile native addons from npm you’ll need to install the development tools: <br>
 `sudo apt install build-essential`
 
 - Install npm – Node package manager.
