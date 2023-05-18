@@ -1,60 +1,81 @@
-MEAN STACK DEPLOYMENT TO UBUNTU IN AWS
+# MEAN STACK DEPLOYMENT TO UBUNTU IN AWS
  
-Now, that you have already learned how to deploy LAMP, LEMP and MERN Web stacks – it is time to get yourself familiar with the MEAN stack and deploy it to the Ubuntu server.
-MEAN Stack is a combination of the following components:
+**MEAN Stack** is a combination of the following components:
 MongoDB (Document database) – Stores and allows retrieval of data.
 Express (Back-end application framework) – Makes requests to Database for Reads and Writes.
 Angular (Front-end application framework) – Handles Client and Server Requests
 Node.js (JavaScript runtime environment) – Accepts requests and displays results to end user
-Side Self Study
-Refresh your knowledge of OSI model
-Read about Load Balancing, and get yourself familiar with different types and techniques of traffic load balancing.
-Practice in editing simple web forms with HTML + CSS + JS
-Instructions On How To Submit Your Work For Review And Feedback
-To submit your work for review and feedback – follow this instruction.
-Step 0 – Preparing prerequisites
-In order to complete this project you will need an AWS account and a virtual server with Ubuntu Server OS.
-If you do not have an AWS account – go back to Project 1 Step 0 to sign in to AWS free tier account and create a new EC2 Instance of t2.nano family with an Ubuntu Server 20.04 LTS (HVM) image. Remember, you can have multiple EC2 instances, but make sure you STOP the ones you are not working with at the moment to save available free hours.
-Hint: In previous projects, we used different tools to connect to an EC2 instance, but if you do not want to install or launch anything outside of AWS, you can open your CLI straight from Web Console in AWS, like this:
+
+## Step 0 – Preparing prerequisites
+- A virtual server with Ubuntu Server OS.
+- SSH Client.
+- Knowledge of Security Groups.
 
 Task
-In this assignment, you are going to implement a simple Book Register web form using MEAN stack.
-Step 1: Install NodeJs
-Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js is used in this tutorial to set up the Express routes and AngularJS controllers.
+In this project, I implemented a simple Book Register web form using MEAN stack.
+
+## Step 1: Install NodeJs
+Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js is used in this project to set up the Express routes and AngularJS controllers.
+
 Update Ubuntu
-sudo apt update
+`sudo apt update`
+
+![1_update_ubuntu](https://github.com/ifydevops23/Software_Stack/assets/126971054/263e15a9-7b7b-471d-bc13-ddb58020f2c5)
+
 Upgrade ubuntu
-sudo apt upgrade
+`sudo apt upgrade`
+
+![1_upgrade_ubuntu](https://github.com/ifydevops23/Software_Stack/assets/126971054/c2a981c2-63bc-4cc4-a27f-9025cce268bc)
+
 Add certificates
-sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
- 
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-Install NodeJS
-sudo apt install -y nodejs
-Step 2: Install MongoDB
-MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time. For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
-mages/WebConsole.gif
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
-Install MongoDB
-sudo apt install -y mongodb
-Start The server
-sudo service mongodb start
-Verify that the service is up and running
-sudo systemctl status mongodb
+`sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates`
+
+![1_ca_cert_installed](https://github.com/ifydevops23/Software_Stack/assets/126971054/6a0d82c3-a8e1-45d2-9634-fa40b510c0c4)
+
+Get NodeSource from Ubuntu repoeitories
+`curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -`
+
+Install NodeJS 
+`sudo apt install -y nodejs`
+
+To be able to compile native addons from npm you’ll need to install the development tools:
+`sudo apt install build-essential`
+
 Install npm – Node package manager.
-sudo apt install -y npm
+`sudo apt install -y npm`
+
+## Step 2: Install MongoDB
+MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time. For this application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
+
+`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
+
+Install MongoDB
+`sudo apt install -y mongodb`
+
+Start The server
+`sudo service mongodb start`
+Verify that the service is up and running
+`sudo systemctl status mongodb`
+
+![2_mongodb_service_start_and_stataus](https://github.com/ifydevops23/Software_Stack/assets/126971054/b20b5080-6f72-4932-acff-de587677a084)
+
 Install body-parser package
 We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
-sudo npm install body-parser
+`sudo npm install body-parser`
+
 Create a folder named ‘Books’
-mkdir Books && cd Books
+`mkdir Books && cd Books`
 In the Books directory, Initialize npm project
-npm init
+`npm init`
+
+![3_create_project_directory_npm_init](https://github.com/ifydevops23/Software_Stack/assets/126971054/0c4be61b-b8ed-48af-9e75-cb27efb8d788)
  
 Add a file to it named server.js
-vi server.js
+`vi server.js`
+
 Copy and paste the web server code below into the server.js file.
+```
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -65,21 +86,22 @@ app.set('port', 3300);
 app.listen(app.get('port'), function() {
     console.log('Server up: http://localhost:' + app.get('port'));
 });
+```
 
-
-
-INSTALL EXPRESS AND SET UP ROUTES TO THE SERVER
-Step 3: Install Express and set up routes to the server
+## STEP 3 -INSTALL EXPRESS AND SET UP ROUTES TO THE SERVER
+**Install Express and set up routes to the server**
 Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express to pass book information to and from our MongoDB database.
-We also will use Mongoose package which provides a straightforward, schema-based solution to model your application data. We will use Mongoose to establish a schema for the database to store data of our book register.
-sudo npm install express mongoose
+
+We also used Mongoose package which provides a straightforward, schema-based solution to model your application data. We will use Mongoose to establish a schema for the database to store data of our book register.
+`sudo npm install express mongoose`
+
 In ‘Books’ folder, create a folder named apps
-mkdir apps && cd apps
+`mkdir apps && cd apps`
 Create a file named routes.js
-vi routes.js
- 
+`vi routes.js`
  
 Copy and paste the code below into routes.js
+```
 var Book = require('./models/book');
 module.exports = function(app) {
   app.get('/book', function(req, res) {
@@ -117,11 +139,17 @@ module.exports = function(app) {
     res.sendfile(path.join(__dirname + '/public', 'index.html'));
   });
 };
+```
+
+![4_created_routes js_file](https://github.com/ifydevops23/Software_Stack/assets/126971054/986c7f8c-a140-4fa4-9d78-d1a668691439)
+
 In the ‘apps’ folder, create a folder named models
-mkdir models && cd models
+`mkdir models && cd models`
+
 Create a file named book.js
-vi book.js
+`vi book.js`
 Copy and paste the code below into ‘book.js’
+```
 var mongoose = require('mongoose');
 var dbHost = 'mongodb://localhost:27017/test';
 mongoose.connect(dbHost);
@@ -135,23 +163,23 @@ var bookSchema = mongoose.Schema( {
 });
 var Book = mongoose.model('Book', bookSchema);
 module.exports = mongoose.model('Book', bookSchema);
-Step 4 – Access the routes with AngularJS
-AngularJS provides a web framework for creating dynamic views in your web applications. In this tutorial, we use AngularJS to connect our web page with Express and perform actions on our book register.
+```
+
+![4_created_book js_file](https://github.com/ifydevops23/Software_Stack/assets/126971054/6482d9ba-cf3f-4908-a838-02ee0435e191)
+
+## Step 4 – Access the routes with AngularJS
+AngularJS provides a web framework for creating dynamic views in your web applications. In this project, we used AngularJS to connect our web page with Express and perform actions on our book register.
+
 Change the directory back to ‘Books’
-cd ../..
+`cd ../..`
+
 Create a folder named public
-mkdir public && cd public
+`mkdir public && cd public`
 Add a file named script.js
-vi script.js
- 
- 
- 
- 
- 
- 
- 
- 
+`vi script.js`
+
 Copy and paste the Code below (controller configuration defined) into the script.js file.
+```
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
   $http( {
@@ -189,13 +217,15 @@ app.controller('myCtrl', function($scope, $http) {
     });
   };
 });
+```
+
+![5_created_script js_file](https://github.com/ifydevops23/Software_Stack/assets/126971054/568348b0-c39e-4aec-8ff4-6a7399da69dc)
+
 In the public folder, create a file named index.html;
-vi index.html
- 
- 
- 
+`vi index.html`
  
 Copy and paste the code below into index.html file.
+```
 <!doctype html>
 <html ng-app="myApp" ng-controller="myCtrl">
   <head>
@@ -246,20 +276,24 @@ Copy and paste the code below into index.html file.
     </div>
   </body>
 </html>
-Change the directory back up to Books
-cd ..
-Start the server by running this command:
-node server.js
-The server is now up and running, we can connect it via port 3300. You can launch a separate Putty or SSH console to test what the curl command returns locally.
-curl -s http://localhost:3300
-It shall return an HTML page, it is hardly readable in the CLI, but we can also try and access it from the Internet.
-For this – you need to open TCP port 3300 in your AWS Web Console for your EC2 Instance.
-You are supposed to know how to do it, if you have forgotten – refer to Project 1 (Step 1 — Installing Apache and Updating the Firewall)
-Your security group shall look like this:
+```
 
-Now you can access our Book Register web application from the Internet with a browser using a Public IP address or Public DNS name.
-A quick reminder on how to get your server’s Public IP and public DNS name:
-You can find it in your AWS web console in EC2 details
-Run curl -s http://169.254.169.254/latest/meta-data/public-ipv4 for Public IP address or curl -s http://169.254.169.254/latest/meta-data/public-hostname for Public DNS name.
-This is how your WebBook Register Application will look in the browser:
+![5_created_index html_file](https://github.com/ifydevops23/Software_Stack/assets/126971054/e6ec7ff6-c49b-4f0f-a8f4-cd0784440adc)
+
+Change the directory back up to Books
+`cd ..`
+
+Start the server by running this command:
+`node server.js`
+The server is now up and running, we can connect it via port 3300. You can launch a separate Putty or SSH console to test what the curl command returns locally.
+`curl -s http://localhost:3300` It shall return an HTML page.
+
+To access it from the Internet, open TCP port 3300 in your AWS EC2 Instance.
+
+![add_security_group](https://github.com/ifydevops23/Software_Stack/assets/126971054/4ace6c60-588e-4ab3-aa41-3c0eaacc7234)
+
+You can access our Book Register web application from the Internet with a browser using a Public IP address or Public DNS name.
+[http://<PublicIP>:3300]
+This is how the WebBook Register Application will look in the browser:
+![6_success_from_web_add_delete](https://github.com/ifydevops23/Software_Stack/assets/126971054/6a285cac-bba6-48a2-aae3-5d340317948d)
 
