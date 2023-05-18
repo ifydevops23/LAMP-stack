@@ -1,17 +1,16 @@
 # MEAN STACK DEPLOYMENT TO UBUNTU IN AWS
  
 **MEAN Stack** is a combination of the following components:
-MongoDB (Document database) – Stores and allows retrieval of data.
-Express (Back-end application framework) – Makes requests to Database for Reads and Writes.
-Angular (Front-end application framework) – Handles Client and Server Requests
-Node.js (JavaScript runtime environment) – Accepts requests and displays results to end user
+* MongoDB (Document database) – Stores and allows retrieval of data.
+* Express (Back-end application framework) – Makes requests to Database for Reads and Writes.
+* Angular (Front-end application framework) – Handles Client and Server Requests
+* Node.js (JavaScript runtime environment) – Accepts requests and displays results to end user
 
 ## Step 0 – Preparing prerequisites
 - A virtual server with Ubuntu Server OS.
 - SSH Client.
 - Knowledge of Security Groups.
 
-Task
 In this project, I implemented a simple Book Register web form using MEAN stack.
 
 ## Step 1: Install NodeJs
@@ -61,7 +60,7 @@ Verify that the service is up and running
 ![2_mongodb_service_start_and_stataus](https://github.com/ifydevops23/Software_Stack/assets/126971054/b20b5080-6f72-4932-acff-de587677a084)
 
 Install body-parser package
-We need ‘body-parser’ package to help us process JSON files passed in requests to the server.
+We need ‘body-parser’ package to help us process JSON files passed in requests to the server
 `sudo npm install body-parser`
 
 Create a folder named ‘Books’
