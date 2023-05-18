@@ -60,7 +60,7 @@ Verify that the service is up and running
 ![2_mongodb_service_start_and_stataus](https://github.com/ifydevops23/Software_Stack/assets/126971054/b20b5080-6f72-4932-acff-de587677a084)
 
 Install body-parser package
-We need ‘body-parser’ package to help us process JSON files passed in requests to the server
+We need ‘body-parser’ package to help us process JSON files passed in requests to the server \n
 `sudo npm install body-parser`
 
 Create a folder named ‘Books’
@@ -70,7 +70,7 @@ In the Books directory, Initialize npm project
 
 ![3_create_project_directory_npm_init](https://github.com/ifydevops23/Software_Stack/assets/126971054/0c4be61b-b8ed-48af-9e75-cb27efb8d788)
  
-Add a file to it named server.js
+Add a file to it named server.js \n
 `vi server.js`
 
 Copy and paste the web server code below into the server.js file.
